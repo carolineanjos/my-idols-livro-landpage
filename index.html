@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>Minhas Idols — Livro de Colorir K-pop Infantil</title>
+    <meta
+      name="description"
+      content="Livro de colorir inspirado no universo K-pop com 20 páginas fofíssimas no estilo chibi. Imprima em casa e deixe a criatividade brilhar! R$8,00 com acesso imediato."
+    />
+    <meta
+      name="keywords"
+      content="livro de colorir kpop, livro pintar infantil, kpop kids, colorir chibi, atividade infantil kpop"
+    />
+    <meta name="author" content="Colorindo Digital" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="product" />
+    <meta property="og:title" content="Minhas Idols — Livro de Colorir K-pop" />
+    <meta
+      property="og:description"
+      content="20 páginas fofíssimas no estilo chibi para colorir. PDF para imprimir em casa. R$14,90 com acesso imediato."
+    />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Colorindo Digital" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Nunito", system-ui, sans-serif;
+        background: #fff0f7;
+        color: #3a2040;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      button {
+        font: inherit;
+        cursor: pointer;
+        border: none;
+        background: none;
+        color: inherit;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        margin: 0;
+        font-family: "Pacifico", cursive;
+        line-height: 1.2;
+      }
+      p {
+        margin: 0;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      :root {
+        --pink: #ff6fb7;
+        --pink-light: #ffd6ec;
+        --pink-pale: #fff0f7;
+        --lilac: #c084fc;
+        --lilac-light: #ede9ff;
+        --lilac-pale: #f5f0ff;
+        --purple-dark: #7c3aed;
+        --ink: #3a2040;
+        --ink-muted: #8a5a7a;
+        --white: #ffffff;
+        --line: #f0c8e0;
+        --star: #ffd700;
+        --shadow-sm: 0 2px 8px rgba(192, 132, 252, 0.15);
+        --shadow-md: 0 8px 24px rgba(192, 132, 252, 0.2);
+        --shadow-lg: 0 16px 48px rgba(192, 132, 252, 0.25);
+        --radius: 20px;
+        --radius-lg: 32px;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      section {
+        padding: 64px 0;
+        position: relative;
+      }
+      @media (min-width: 768px) {
+        section {
+          padding: 96px 0;
+        }
+      }
+
+      :focus-visible {
+        outline: 3px solid var(--lilac);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* ========== REVEAL ========== */
+      .reveal {
+        transition: opacity 600ms ease, transform 600ms ease;
+      }
+      .reveal.reveal-pending {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* ========== URGENCY BAR ========== */
+      .urgency {
+        position: sticky;
+        top: 0;
+        z-index: 60;
+        background: linear-gradient(
+          90deg,
+          #d946a8 0%,
+          #a855f7 50%,
+          #d946a8 100%
+        );
+        color: #fff;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        box-shadow: 0 2px 8px rgba(168, 85, 247, 0.3);
+      }
+      .urgency-track {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: opacity 350ms ease;
+      }
+      .urgency.fade .urgency-track {
+        opacity: 0;
+      }
+
+      /* ========== STARS DECORATION ========== */
+      .star-deco {
+        position: absolute;
+        pointer-events: none;
+        opacity: 0.35;
+        font-size: 20px;
+        animation: float 4s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-10px) rotate(15deg);
+        }
+      }
+
+      /* ========== HERO ========== */
+      .hero {
+        padding: 56px 0 48px;
+        background: radial-gradient(
+            circle at 5% 20%,
+            #ffd6ec 0%,
+            transparent 40%
+          ),
+          radial-gradient(circle at 95% 10%, #ede9ff 0%, transparent 40%),
+          var(--pink-pale);
+        overflow: hidden;
+      }
+      @media (min-width: 768px) {
+        .hero {
+          padding: 88px 0 72px;
+        }
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+      @media (min-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1.1fr 1fr;
+          gap: 56px;
+        }
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--pink-light);
+        color: #be185d;
+        padding: 7px 16px;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        margin-bottom: 20px;
+        font-family: "Nunito", sans-serif;
+      }
+
+      .hero h1 {
+        font-size: clamp(36px, 6vw, 60px);
+        line-height: 1.1;
+        margin-bottom: 18px;
+        background: linear-gradient(135deg, #db2777, #9333ea);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-sub {
+        font-size: 16px;
+        color: var(--ink-muted);
+        max-width: 480px;
+        margin-bottom: 28px;
+        font-weight: 500;
+      }
+      @media (min-width: 768px) {
+        .hero-sub {
+          font-size: 17px;
+        }
+      }
+
+      .cta-row {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        align-items: flex-start;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 16px 32px;
+        border-radius: 999px;
+        font-weight: 800;
+        font-size: 16px;
+        font-family: "Nunito", sans-serif;
+        transition: transform 180ms ease, box-shadow 180ms ease;
+        will-change: transform;
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, #ec4899, #a855f7);
+        color: #fff;
+        box-shadow: 0 8px 24px rgba(168, 85, 247, 0.35),
+          inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      }
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 36px rgba(168, 85, 247, 0.45);
+      }
+      .btn-primary:active {
+        transform: translateY(0);
+      }
+      .btn-primary .arrow {
+        transition: transform 220ms ease;
+      }
+      .btn-primary:hover .arrow {
+        transform: translateX(5px);
+      }
+
+      .micro {
+        color: var(--ink-muted);
+        font-size: 13px;
+        font-weight: 600;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+      .micro span {
+        display: inline-flex;
+        gap: 6px;
+        align-items: center;
+      }
+      .check {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--lilac-light);
+        color: var(--purple-dark);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        font-weight: 900;
+      }
+
+      /* Hero image */
+      .hero-img-wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .hero-img-blob {
+        position: absolute;
+        width: 90%;
+        height: 90%;
+        background: radial-gradient(circle, #ffd6ec 0%, #ede9ff 100%);
+        border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+        animation: morph 8s ease-in-out infinite;
+        z-index: 0;
+      }
+      @keyframes morph {
+        0%,
+        100% {
+          border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+        }
+        50% {
+          border-radius: 40% 60% 45% 55% / 60% 40% 60% 40%;
+        }
+      }
+      .hero-img-wrap img {
+        position: relative;
+        z-index: 1;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+        max-width: 340px;
+        width: 100%;
+      }
+      .hero-badge {
+        position: absolute;
+        bottom: 12px;
+        right: 0px;
+        z-index: 2;
+        background: #fff;
+        border: 2px solid var(--pink-light);
+        border-radius: var(--radius);
+        padding: 10px 16px;
+        box-shadow: var(--shadow-md);
+        text-align: center;
+      }
+      .hero-badge .price-old {
+        font-size: 12px;
+        color: var(--ink-muted);
+        text-decoration: line-through;
+        font-weight: 600;
+      }
+      .hero-badge .price-new {
+        font-size: 22px;
+        font-weight: 900;
+        color: #be185d;
+        font-family: "Nunito", sans-serif;
+      }
+      .hero-badge .price-label {
+        font-size: 11px;
+        color: var(--ink-muted);
+        font-weight: 600;
+      }
+
+      /* ========== SOCIAL PROOF BAR ========== */
+      .proof-bar {
+        background: #fff;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 20px 0;
+      }
+      .proof-bar-inner {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px 40px;
+        align-items: center;
+        justify-content: center;
+      }
+      .proof-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .proof-icon {
+        font-size: 22px;
+      }
+      .proof-text {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--ink-muted);
+      }
+      .proof-text strong {
+        color: var(--ink);
+        font-size: 15px;
+        display: block;
+      }
+
+      /* ========== WHAT IS ========== */
+      .what-is {
+        background: #fff;
+      }
+      .section-label {
+        display: inline-block;
+        background: var(--lilac-light);
+        color: var(--purple-dark);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 5px 14px;
+        border-radius: 999px;
+        margin-bottom: 16px;
+        font-family: "Nunito", sans-serif;
+      }
+      .what-is h2 {
+        font-size: clamp(26px, 4vw, 40px);
+        margin-bottom: 16px;
+        color: var(--ink);
+      }
+      .what-is h2 em {
+        color: #db2777;
+        font-style: normal;
+      }
+      .what-is-desc {
+        font-size: 16px;
+        color: var(--ink-muted);
+        max-width: 600px;
+        margin-bottom: 40px;
+        font-weight: 500;
+      }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+      .feat-card {
+        background: var(--pink-pale);
+        border: 1.5px solid var(--line);
+        border-radius: var(--radius);
+        padding: 24px 20px;
+        text-align: center;
+        transition: transform 200ms ease, box-shadow 200ms ease;
+      }
+      .feat-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+      }
+      .feat-card .icon {
+        font-size: 32px;
+        margin-bottom: 12px;
+      }
+      .feat-card h3 {
+        font-size: 15px;
+        font-weight: 800;
+        margin-bottom: 6px;
+        font-family: "Nunito", sans-serif;
+        color: var(--ink);
+      }
+      .feat-card p {
+        font-size: 13px;
+        color: var(--ink-muted);
+        font-weight: 500;
+      }
+
+      /* ========== FOR WHO ========== */
+      .for-who {
+        background: linear-gradient(135deg, #fdf2f8 0%, #f5f3ff 100%);
+      }
+      .for-who h2 {
+        font-size: clamp(24px, 3.5vw, 38px);
+        margin-bottom: 32px;
+        color: var(--ink);
+        text-align: center;
+      }
+      .for-who h2 em {
+        color: #9333ea;
+        font-style: normal;
+      }
+      .for-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      @media (min-width: 600px) {
+        .for-list {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .for-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: #fff;
+        border-radius: var(--radius);
+        padding: 16px 20px;
+        border: 1.5px solid var(--line);
+        font-weight: 700;
+        font-size: 15px;
+      }
+      .for-item .fi {
+        font-size: 24px;
+      }
+
+      /* ========== PAGES PREVIEW ========== */
+      .preview {
+        background: #fff;
+      }
+      .preview h2 {
+        font-size: clamp(24px, 3.5vw, 38px);
+        margin-bottom: 8px;
+        color: var(--ink);
+        text-align: center;
+      }
+      .preview h2 em {
+        color: #db2777;
+        font-style: normal;
+      }
+      .preview-sub {
+        text-align: center;
+        color: var(--ink-muted);
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 40px;
+      }
+      .pages-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+      }
+      .page-card {
+        background: var(--pink-pale);
+        border: 1.5px solid var(--line);
+        border-radius: var(--radius);
+        padding: 24px 16px;
+        text-align: center;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--ink-muted);
+      }
+      .page-card .pg-icon {
+        font-size: 36px;
+        margin-bottom: 10px;
+      }
+      .page-card span {
+        display: block;
+        font-size: 12px;
+        margin-top: 4px;
+      }
+
+      /* ========== TESTIMONIALS ========== */
+      .testimonials {
+        background: linear-gradient(135deg, #fdf2f8 0%, #f5f3ff 100%);
+      }
+      .testimonials h2 {
+        font-size: clamp(24px, 3.5vw, 38px);
+        margin-bottom: 32px;
+        color: var(--ink);
+        text-align: center;
+      }
+      .testimonials h2 em {
+        color: #9333ea;
+        font-style: normal;
+      }
+      .testi-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      @media (min-width: 640px) {
+        .testi-grid {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+      .testi-card {
+        background: #fff;
+        border-radius: var(--radius);
+        padding: 24px;
+        border: 1.5px solid var(--line);
+        box-shadow: var(--shadow-sm);
+      }
+      .testi-stars {
+        color: var(--star);
+        font-size: 14px;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+      }
+      .testi-text {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--ink);
+        margin-bottom: 14px;
+        line-height: 1.5;
+      }
+      .testi-author {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .testi-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--pink), var(--lilac));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+      }
+      .testi-name {
+        font-size: 13px;
+        font-weight: 800;
+        color: var(--ink);
+      }
+      .testi-handle {
+        font-size: 11px;
+        color: var(--ink-muted);
+        font-weight: 600;
+      }
+
+      /* ========== HOW IT WORKS ========== */
+      .how {
+        background: #fff;
+      }
+      .how h2 {
+        font-size: clamp(24px, 3.5vw, 38px);
+        margin-bottom: 40px;
+        color: var(--ink);
+        text-align: center;
+      }
+      .how h2 em {
+        color: #db2777;
+        font-style: normal;
+      }
+      .steps {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 680px;
+        margin: 0 auto;
+      }
+      @media (min-width: 640px) {
+        .steps {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .step {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        background: var(--lilac-pale);
+        border-radius: var(--radius);
+        padding: 20px;
+      }
+      .step-num {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        background: linear-gradient(135deg, var(--pink), var(--lilac));
+        color: #fff;
+        font-weight: 900;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Nunito", sans-serif;
+      }
+      .step h3 {
+        font-size: 14px;
+        font-weight: 800;
+        margin-bottom: 4px;
+        font-family: "Nunito", sans-serif;
+        color: var(--ink);
+      }
+      .step p {
+        font-size: 13px;
+        color: var(--ink-muted);
+        font-weight: 500;
+      }
+
+      /* ========== FAQ ========== */
+      .faq {
+        background: linear-gradient(135deg, #fdf2f8 0%, #f5f3ff 100%);
+      }
+      .faq h2 {
+        font-size: clamp(24px, 3.5vw, 38px);
+        margin-bottom: 32px;
+        color: var(--ink);
+        text-align: center;
+      }
+      .faq h2 em {
+        color: #9333ea;
+        font-style: normal;
+      }
+      .faq-list {
+        max-width: 680px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .faq-item {
+        background: #fff;
+        border-radius: var(--radius);
+        border: 1.5px solid var(--line);
+        overflow: hidden;
+      }
+      .faq-q {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        text-align: left;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--ink);
+        gap: 12px;
+        cursor: pointer;
+      }
+      .faq-q .ic {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        background: var(--pink-light);
+        color: #be185d;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 900;
+        transition: transform 300ms ease;
+      }
+      .faq-item.open .faq-q .ic {
+        transform: rotate(45deg);
+      }
+      .faq-a {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 320ms ease;
+      }
+      .faq-a-inner {
+        padding: 0 20px 18px;
+        font-size: 14px;
+        color: var(--ink-muted);
+        font-weight: 500;
+        line-height: 1.6;
+      }
+
+      /* ========== FINAL CTA ========== */
+      .final {
+        background: linear-gradient(135deg, #fce7f3, #ede9fe);
+        text-align: center;
+      }
+      .final-ornament {
+        font-size: 48px;
+        margin-bottom: 20px;
+        animation: pulse 2s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+      .final h2 {
+        font-size: clamp(26px, 4vw, 44px);
+        margin-bottom: 12px;
+        color: var(--ink);
+      }
+      .final h2 em {
+        color: #db2777;
+        font-style: normal;
+      }
+      .final p {
+        font-size: 16px;
+        color: var(--ink-muted);
+        font-weight: 500;
+        margin-bottom: 32px;
+      }
+      .final .small {
+        font-size: 13px;
+        color: var(--ink-muted);
+        font-weight: 600;
+        margin-top: 16px;
+      }
+
+      /* ========== FOOTER ========== */
+      .foot {
+        background: #3a2040;
+        color: rgba(255, 255, 255, 0.7);
+        padding: 32px 0;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .foot-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 32px;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .foot-brand {
+        font-family: "Pacifico", cursive;
+        font-size: 18px;
+        color: #fff;
+      }
+      .foot-links {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .foot-links a {
+        opacity: 0.7;
+        transition: opacity 150ms ease;
+      }
+      .foot-links a:hover {
+        opacity: 1;
+      }
+      .foot-ig a {
+        color: var(--pink-light);
+        font-weight: 800;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      /* ========== STICKY CTA (mobile) ========== */
+      .sticky-cta {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        background: #fff;
+        border-top: 2px solid var(--line);
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        box-shadow: 0 -4px 20px rgba(168, 85, 247, 0.15);
+        transform: translateY(110%);
+        transition: transform 400ms ease;
+      }
+      .sticky-cta.show {
+        transform: translateY(0);
+      }
+      @media (min-width: 768px) {
+        .sticky-cta {
+          display: none;
+        }
+      }
+      .sticky-cta .left .a {
+        display: block;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--ink-muted);
+      }
+      .sticky-cta .left .b {
+        display: block;
+        font-size: 18px;
+        font-weight: 900;
+        color: #be185d;
+      }
+      .sticky-cta .cta {
+        background: linear-gradient(135deg, #ec4899, #a855f7);
+        color: #fff;
+        padding: 12px 24px;
+        border-radius: 999px;
+        font-weight: 800;
+        font-size: 14px;
+        white-space: nowrap;
+        box-shadow: 0 4px 14px rgba(168, 85, 247, 0.35);
+        font-family: "Nunito", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- URGENCY BAR -->
+    <div class="urgency" id="urgency" role="banner" aria-label="Oferta">
+      <div class="urgency-track">
+        <span id="urgencyText"
+          >🌟 Oferta especial de lançamento — R$14,90 hoje!</span
+        >
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" data-screen-label="01 Hero">
+      <span class="star-deco" style="top: 60px; left: 4%; animation-delay: 0s"
+        >⭐</span
+      >
+      <span
+        class="star-deco"
+        style="top: 120px; right: 6%; animation-delay: 1.2s; font-size: 14px"
+        >✨</span
+      >
+      <span
+        class="star-deco"
+        style="bottom: 80px; left: 8%; animation-delay: 2s; font-size: 16px"
+        >💜</span
+      >
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content reveal">
+            <div class="eyebrow">🎵 Para fãs de K-pop</div>
+            <h1>Minhas Idols</h1>
+            <p class="hero-sub">
+              O livro de colorir fofíssimo inspirado no universo K-pop! 20
+              páginas no estilo chibi para imprimir em casa e colorir com toda a
+              energia do fandom. 🌸
+            </p>
+            <div class="cta-row">
+              <a href="#" data-checkout class="btn btn-primary">
+                Quero meu livro agora — R$14,90
+                <span class="arrow" aria-hidden="true">→</span>
+              </a>
+              <div class="micro">
+                <span><span class="check">✓</span> PDF para imprimir</span>
+                <span><span class="check">✓</span> Acesso imediato</span>
+                <span><span class="check">✓</span> 20 páginas fofinhas</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-img-wrap reveal">
+            <div class="hero-img-blob"></div>
+            <!-- Substitua o src abaixo pela URL da sua capa real -->
+            <img
+              src="https://carolineanjos.github.io/my-idols-livro-landpage/capa.jpg"
+              alt="Capa do livro de colorir Minhas Idols"
+              width="340"
+              height="460"
+            />
+            <div class="hero-badge">
+              <div class="price-old">De R$35,00</div>
+              <div class="price-new">R$ 14,90</div>
+              <div class="price-label">lançamento 🎉</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL PROOF BAR -->
+    <div class="proof-bar">
+      <div class="container">
+        <div class="proof-bar-inner">
+          <div class="proof-item">
+            <span class="proof-icon">⭐</span>
+            <div class="proof-text"><strong>5.0 / 5</strong> avaliações</div>
+          </div>
+          <div class="proof-item">
+            <span class="proof-icon">📄</span>
+            <div class="proof-text">
+              <strong>20 páginas</strong> para colorir
+            </div>
+          </div>
+          <div class="proof-item">
+            <span class="proof-icon">⚡</span>
+            <div class="proof-text">
+              <strong>Acesso imediato</strong> após pagamento
+            </div>
+          </div>
+          <div class="proof-item">
+            <span class="proof-icon">🖨️</span>
+            <div class="proof-text">
+              <strong>Imprime quantas</strong> vezes quiser
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- O QUE É -->
+    <section class="what-is" data-screen-label="02 O que é">
+      <div class="container">
+        <div class="reveal">
+          <span class="section-label">✨ O produto</span>
+          <h2>Tudo que uma <em>fã merece</em> ter</h2>
+          <p class="what-is-desc">
+            Um livro de colorir completo, criado com muito amor para pequenas (e
+            grandes!) fãs de K-pop. Baixe, imprima e divirta-se!
+          </p>
+        </div>
+        <div class="features-grid reveal">
+          <div class="feat-card">
+            <div class="icon">🎨</div>
+            <h3>20 Páginas Fofinhas</h3>
+            <p>Ilustrações no estilo chibi prontas para ganhar cor</p>
+          </div>
+          <div class="feat-card">
+            <div class="icon">📱</div>
+            <h3>PDF Digital</h3>
+            <p>Receba no seu e-mail e abra em qualquer dispositivo</p>
+          </div>
+          <div class="feat-card">
+            <div class="icon">🖨️</div>
+            <h3>Imprime Infinito</h3>
+            <p>Um arquivo, impressões sem limite para a galera toda!</p>
+          </div>
+          <div class="feat-card">
+            <div class="icon">⭐</div>
+            <h3>Estilo K-pop</h3>
+            <p>Personagens, estrelas, microfones e muito mais</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARA QUEM É -->
+    <section class="for-who" data-screen-label="03 Para quem">
+      <div class="container">
+        <h2 class="reveal">É perfeito para <em>você</em> se…</h2>
+        <ul class="for-list reveal">
+          <li class="for-item">
+            <span class="fi">💜</span> Sua filha ama K-pop
+          </li>
+          <li class="for-item">
+            <span class="fi">🎵</span> Você quer presentear uma fã
+          </li>
+          <li class="for-item">
+            <span class="fi">🎨</span> Adora atividades criativas
+          </li>
+          <li class="for-item">
+            <span class="fi">⭐</span> Quer algo temático e fofo
+          </li>
+          <li class="for-item">
+            <span class="fi">🖨️</span> Prefere imprimir em casa
+          </li>
+          <li class="for-item">
+            <span class="fi">✨</span> Curte o estilo chibi
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- O QUE TEM DENTRO -->
+    <section class="preview" data-screen-label="04 Páginas">
+      <div class="container">
+        <h2 class="reveal">O que tem <em>dentro</em>?</h2>
+        <p class="preview-sub reveal">
+          20 páginas com ilustrações variadas para colorir do seu jeito 🌸
+        </p>
+        <div class="pages-grid reveal">
+          <div class="page-card">
+            <div class="pg-icon">👧</div>
+            Idol em pose<span>chibi fofinha</span>
+          </div>
+          <div class="page-card">
+            <div class="pg-icon">🎤</div>
+            No palco<span>microfone e luzes</span>
+          </div>
+          <div class="page-card">
+            <div class="pg-icon">💃</div>
+            Dançando<span>coreografia k-pop</span>
+          </div>
+          <div class="page-card">
+            <div class="pg-icon">🌸</div>
+            Cenário floral<span>fundo kawaii</span>
+          </div>
+          <div class="page-card">
+            <div class="pg-icon">⭐</div>
+            Estrelas e brilhos<span>fundo decorativo</span>
+          </div>
+          <div class="page-card">
+            <div class="pg-icon">👯</div>
+            Grupo de idols<span>todas juntas</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="testimonials" data-screen-label="05 Depoimentos">
+      <div class="container">
+        <h2 class="reveal">Quem já <em>amou</em> 💜</h2>
+        <div class="testi-grid reveal">
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">
+              "Minha filha ficou obcecada! Ela coloriu todas as páginas em dois
+              dias e pediu para imprimir de novo 😍"
+            </p>
+            <div class="testi-author">
+              <div class="testi-avatar">👩</div>
+              <div>
+                <div class="testi-name">Ana Clara</div>
+                <div class="testi-handle">mãe de fã 💜</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">
+              "Super fofo e com ótima qualidade! Dei de presente para minha
+              sobrinha e ela adorou. As ilustrações são lindas!"
+            </p>
+            <div class="testi-author">
+              <div class="testi-avatar">👩‍🦱</div>
+              <div>
+                <div class="testi-name">Juliana M.</div>
+                <div class="testi-handle">tia coruja ✨</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">
+              "Recebi o PDF na hora, imprimi e já comecei a colorir! Muito fofo,
+              amei o estilo chibi das personagens 🌸"
+            </p>
+            <div class="testi-author">
+              <div class="testi-avatar">🧒</div>
+              <div>
+                <div class="testi-name">Lara S., 11 anos</div>
+                <div class="testi-handle">BLINK de coração 💗</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="how" data-screen-label="06 Como funciona">
+      <div class="container">
+        <h2 class="reveal">Como <em>funciona</em>?</h2>
+        <div class="steps reveal">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div>
+              <h3>Compre agora</h3>
+              <p>
+                Clique no botão e finalize o pagamento com segurança pela
+                Kiwify.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div>
+              <h3>Receba no e-mail</h3>
+              <p>
+                O PDF chega no seu e-mail logo após a confirmação do pagamento.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div>
+              <h3>Imprima em casa</h3>
+              <p>
+                Abra o PDF, mande para a impressora e as páginas estão prontas!
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div>
+              <h3>Divirta-se!</h3>
+              <p>Pegue os lápis de cor e deixe a criatividade brilhar! ✨</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" data-screen-label="07 FAQ">
+      <div class="container">
+        <h2 class="reveal">Dúvidas <em>frequentes</em></h2>
+        <div class="faq-list reveal">
+          <article class="faq-item">
+            <button class="faq-q" aria-expanded="false" aria-controls="faq1">
+              <span>Como recebo o livro após a compra?</span>
+              <span class="ic" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a" id="faq1" role="region">
+              <div class="faq-a-inner">
+                Logo após a confirmação do pagamento, você recebe um e-mail com
+                o link para baixar o PDF. O acesso é imediato!
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-q" aria-expanded="false" aria-controls="faq2">
+              <span>Quantas vezes posso imprimir?</span>
+              <span class="ic" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a" id="faq2" role="region">
+              <div class="faq-a-inner">
+                Quantas vezes quiser! O PDF é seu, pode imprimir para toda a
+                turma, para presentear amigas ou repetir as páginas favoritas.
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-q" aria-expanded="false" aria-controls="faq3">
+              <span>Que tipo de papel e impressora usar?</span>
+              <span class="ic" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a" id="faq3" role="region">
+              <div class="faq-a-inner">
+                Funciona em qualquer impressora doméstica. Para um resultado
+                mais bonito, papel sulfite comum (A4) já fica ótimo! Papel mais
+                grosso deixa as cores ainda mais vibrantes.
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-q" aria-expanded="false" aria-controls="faq4">
+              <span>Para qual idade é indicado?</span>
+              <span class="ic" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a" id="faq4" role="region">
+              <div class="faq-a-inner">
+                O livro é perfeito para crianças a partir de 5 anos, mas
+                honestamente, fãs de K-pop de qualquer idade vão se divertir —
+                inclusive adultos! 💜
+              </div>
+            </div>
+          </article>
+
+          <!-- <article class="faq-item">
+            <button class="faq-q" aria-expanded="false" aria-controls="faq5">
+              <span>Tem garantia?</span>
+              <span class="ic" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a" id="faq5" role="region">
+              <div class="faq-a-inner">
+                Sim! 7 dias de garantia. Se não ficar satisfeita, é só entrar em
+                contato pelo Instagram
+                <a
+                  href="https://instagram.com/colo.rindodigital"
+                  target="_blank"
+                  rel="noopener"
+                  style="color: #be185d; font-weight: 800"
+                  >@colo.rindodigital</a
+                >
+                e devolvemos seu dinheiro sem perguntas.
+              </div>
+            </div>
+          </article> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final" data-screen-label="08 CTA Final">
+      <div class="container reveal">
+        <div class="final-ornament">🌸</div>
+        <h2>Sua idol espera por <em>você</em>!</h2>
+        <p>Baixe agora, imprima e deixe as cores brilharem. ✨</p>
+        <a href="#" data-checkout class="btn btn-primary">
+          Quero meu livro agora — R$14,90
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <p class="small">💜 PDF com acesso imediato · 7 dias de garantia</p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="foot" role="contentinfo">
+      <div class="container">
+        <div class="foot-grid">
+          <div class="foot-brand">Colorindo Digital</div>
+          <!-- <div class="foot-ig">
+            <a
+              href="https://instagram.com/colo.rindodigital"
+              target="_blank"
+              rel="noopener"
+              >📸 @colo.rindodigital</a
+            >
+          </div>
+          <div class="foot-links">
+            <a href="#">Política de privacidade</a>
+            <a href="#">Contato</a>
+          </div> -->
+          <div>© 2026 — Todos os direitos reservados</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- STICKY MOBILE CTA -->
+    <div
+      class="sticky-cta"
+      id="stickyCta"
+      role="complementary"
+      aria-label="Oferta rápida"
+    >
+      <div class="left">
+        <span class="a">Minhas Idols — PDF</span>
+        <span class="b">R$ 14,90</span>
+      </div>
+      <a href="#" data-checkout class="cta">Quero agora →</a>
+    </div>
+
+    <script>
+      (function () {
+        "use strict";
+
+        /* ========================================================
+     CHECKOUT URL — troque pelo link real do Kiwify.
+     ======================================================== */
+        const CHECKOUT_URL = "https://pay.kiwify.com.br/SEU-LINK-AQUI";
+
+        document.querySelectorAll("a[data-checkout]").forEach((a) => {
+          a.setAttribute("href", CHECKOUT_URL);
+          a.setAttribute("target", "_blank");
+          a.setAttribute("rel", "noopener");
+        });
+
+        /* ===== Urgency Bar Rotation ===== */
+        const messages = [
+          "🌟 Oferta especial de lançamento — R$14,90 hoje!",
+          "🔒 Pagamento 100% seguro pela Kiwify",
+          "⚡ Acesso imediato após o pagamento",
+          "💜 PDF para imprimir quantas vezes quiser!",
+        ];
+        const urgencyEl = document.getElementById("urgency");
+        const urgencyText = document.getElementById("urgencyText");
+        let urgencyIdx = 0;
+        setInterval(() => {
+          urgencyEl.classList.add("fade");
+          setTimeout(() => {
+            urgencyIdx = (urgencyIdx + 1) % messages.length;
+            urgencyText.textContent = messages[urgencyIdx];
+            urgencyEl.classList.remove("fade");
+          }, 350);
+        }, 4000);
+
+        /* ===== FAQ Accordion ===== */
+        document.querySelectorAll(".faq-item").forEach((item) => {
+          const btn = item.querySelector(".faq-q");
+          const ans = item.querySelector(".faq-a");
+          btn.addEventListener("click", () => {
+            const isOpen = item.classList.contains("open");
+            document.querySelectorAll(".faq-item.open").forEach((other) => {
+              if (other !== item) {
+                other.classList.remove("open");
+                other.querySelector(".faq-a").style.maxHeight = "0px";
+                other
+                  .querySelector(".faq-q")
+                  .setAttribute("aria-expanded", "false");
+              }
+            });
+            if (isOpen) {
+              item.classList.remove("open");
+              ans.style.maxHeight = "0px";
+              btn.setAttribute("aria-expanded", "false");
+            } else {
+              item.classList.add("open");
+              ans.style.maxHeight = ans.scrollHeight + "px";
+              btn.setAttribute("aria-expanded", "true");
+            }
+          });
+        });
+
+        /* ===== Reveal on Scroll ===== */
+        const revealEls = document.querySelectorAll(".reveal");
+        if ("IntersectionObserver" in window) {
+          const vh =
+            window.innerHeight || document.documentElement.clientHeight;
+          revealEls.forEach((el, i) => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top > vh * 0.9) {
+              el.classList.add("reveal-pending");
+              el.style.transitionDelay = Math.min(i % 4, 3) * 80 + "ms";
+            }
+          });
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.remove("reveal-pending");
+                  entry.target.classList.add("in");
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+          );
+          revealEls.forEach((el) => {
+            if (el.classList.contains("reveal-pending")) observer.observe(el);
+          });
+          setTimeout(() => {
+            document
+              .querySelectorAll(".reveal.reveal-pending")
+              .forEach((el) => {
+                el.classList.remove("reveal-pending");
+                el.classList.add("in");
+              });
+          }, 1500);
+        }
+
+        /* ===== Sticky CTA on Mobile ===== */
+        const stickyCta = document.getElementById("stickyCta");
+        const hero = document.querySelector(".hero");
+        new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+                stickyCta.classList.add("show");
+              } else if (entry.isIntersecting) {
+                stickyCta.classList.remove("show");
+              }
+            });
+          },
+          { threshold: 0 }
+        ).observe(hero);
+      })();
+    </script>
+  </body>
+</html>
