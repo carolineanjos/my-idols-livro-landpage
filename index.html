@@ -377,17 +377,25 @@
   .foot-links a:hover { opacity: 1; }
   .foot-ig a { color: var(--pink-light); font-weight: 800; display: inline-flex; align-items: center; gap: 6px; }
 
-  /* ========== STICKY CTA (mobile) ========== */
+  /* ========== STICKY CTA (todos os dispositivos) ========== */
   .sticky-cta {
-    position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
     background: #fff; border-top: 2px solid var(--line);
     padding: 10px 16px;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom));
     display: flex; align-items: center; justify-content: space-between; gap: 12px;
-    box-shadow: 0 -4px 20px rgba(168,85,247,0.15);
-    transform: translateY(110%); transition: transform 400ms ease;
+    box-shadow: 0 -4px 20px rgba(168,85,247,0.2);
+    -webkit-transform: translateY(110%);
+    transform: translateY(110%);
+    -webkit-transition: transform 400ms ease;
+    transition: transform 400ms ease;
+    will-change: transform;
   }
-  .sticky-cta.show { transform: translateY(0); }
-  @media (min-width: 768px) { .sticky-cta { display: none; } }
+  .sticky-cta.show {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  @media (min-width: 768px) { .sticky-cta { display: none !important; } }
   .sticky-cta .left .a { display: block; font-size: 12px; font-weight: 700; color: var(--ink-muted); }
   .sticky-cta .left .b { display: block; font-size: 17px; font-weight: 900; color: #be185d; }
   .sticky-cta .cta {
@@ -396,6 +404,7 @@
     border-radius: 999px; font-weight: 800; font-size: 14px;
     white-space: nowrap; box-shadow: 0 4px 14px rgba(168,85,247,0.35);
     font-family: "Nunito", sans-serif;
+    -webkit-tap-highlight-color: transparent;
   }
 </style>
 </head>
@@ -420,7 +429,7 @@
         <h1>Minhas Idols</h1>
         <p class="hero-sub">O livro de colorir fofíssimo inspirado no universo K-pop! 20 páginas no estilo chibi para imprimir em casa e colorir com toda a energia do fandom. 🌸</p>
         <div class="cta-row">
-          <a href="https://pay.kiwify.com.br/UX0NOC2" data-checkout class="btn btn-primary">
+          <a href="#" data-checkout class="btn btn-primary">
             Quero meu livro agora — R$14,90
             <span class="arrow" aria-hidden="true">→</span>
           </a>
@@ -679,7 +688,7 @@
     <div class="final-ornament">🌸</div>
     <h2>Sua idol espera por <em>você</em>!</h2>
     <p>Baixe agora, imprima e deixe as cores brilharem. ✨</p>
-    <a href="https://pay.kiwify.com.br/UX0NOC2" data-checkout class="btn btn-primary">
+    <a href="#" data-checkout class="btn btn-primary">
       Quero meu livro agora — R$14,90
       <span class="arrow" aria-hidden="true">→</span>
     </a>
@@ -692,7 +701,7 @@
   <div class="container">
     <div class="foot-grid">
       <div class="foot-brand">Colorindo Digital</div>
-      <div class="foot-ig"><a href="https://instagram.com/livrominhasidols" target="_blank" rel="noopener">📸 @livrominhasidols</a></div>
+      <div class="foot-ig"><a href="https://instagram.com/colo.rindodigital" target="_blank" rel="noopener">📸 @colo.rindodigital</a></div>
       <div>© 2026 — Todos os direitos reservados</div>
     </div>
   </div>
@@ -704,13 +713,13 @@
     <span class="a">Minhas Idols — PDF</span>
     <span class="b">R$ 14,90</span>
   </div>
-  <a href="https://pay.kiwify.com.br/UX0NOC2" data-checkout class="cta">Quero agora →</a>
+  <a href="#" data-checkout class="cta">Quero agora →</a>
 </div>
 
 <script>
 (function () {
   'use strict';
-  const CHECKOUT_URL = 'const CHECKOUT_URL = 'https://pay.kiwify.com.br/UX0NOC2';';
+  const CHECKOUT_URL = 'https://pay.kiwify.com.br/UX0NOC2';
   document.querySelectorAll('a[data-checkout]').forEach(a => {
     a.setAttribute('href', CHECKOUT_URL);
     a.setAttribute('target', '_blank');
@@ -791,15 +800,21 @@
 
   const stickyCta = document.getElementById('stickyCta');
   const hero = document.querySelector('.hero');
-  new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
-        stickyCta.classList.add('show');
-      } else if (entry.isIntersecting) {
-        stickyCta.classList.remove('show');
-      }
-    });
-  }, { threshold: 0 }).observe(hero);
+
+  function checkSticky() {
+    if (!hero || !stickyCta) return;
+    const heroBottom = hero.getBoundingClientRect().bottom;
+    if (heroBottom < 0) {
+      stickyCta.classList.add('show');
+    } else {
+      stickyCta.classList.remove('show');
+    }
+  }
+
+  // Scroll event — funciona em todos os dispositivos incluindo iOS
+  window.addEventListener('scroll', checkSticky, { passive: true });
+  // Checa imediatamente ao carregar
+  checkSticky();
 })();
 </script>
 </body>
